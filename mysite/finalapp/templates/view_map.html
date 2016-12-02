@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+<style>
+body{
+  padding: 50px;
+}
+
+p{
+  font-family: "Helvetica", Arial, sans-serif;
+  padding: 50px;
+}
+
+</style>
+{% block content %}
+
+<!-- template for the causes of death page -->
+<br>
+<p style="float: left;">
+Using mortality data from the city we can examine how causes of death vary by neighborhood. Cancer is the most common cause of death in every single neighborhood by a significant measure; however, even with cancer we can see significant variation in rate of death, which is likely due to access to healthcare. For instance, the rate of cancer deaths in the Loop is 120.1 deaths per 100,000 residents, compared to 291.5 in West Garfield Park, a difference of 143 percent.  </p>
+<br>
+<div style = "padding-right: 20px;">
+  <img src='{{ pic_source }}' width=45%; align = "left" />   <img src='{{ pic_source2 }}' width=45%; align = "right" />
+<br>
+
+  <img src='{{ pic_source3 }}' width=45%; align = "left" />   <img src='{{ pic_source4 }}' width=45%; align = "right" />
+<br>
+  <img src='{{ pic_source5 }}' width=45%; align = "left" />   <img src='{{ pic_source6 }}' width=45%; align = "right" />
+<br>
+
+  <img src='{{ pic_source7 }}' width=45%; align = "left" />    <img src='{{ pic_source8 }}' width=45%; align = "right" />
+</div>
+<br>
+<div style = "padding-left: 265px;">
+  <img src='{{ pic_source9 }}' width=65%; align = "center" /> </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+<!-- template for the infant mortality page -->
+<style>
+
+p{
+  font-family: "Helvetica", Arial, sans-serif;
+}
+
+</style>
+{% block content %}
+<br>
+<p style="float: left;">
+Infant mortality rates are an important indicator of access to healthcare. We examine this cause of death separately from the others discussed above because the death of young children is different from the deaths of young adults and adults. The average infant mortality rate is also higher than the national average: 8.46 deaths per 1,000 live births compared to 5.82.
+</p>
+<div style="float: center; padding-left: 180px; padding-top: 40px">
+  <img src='{{ pic_source }}' width=75% align="center" />
+
+</div>
+
+
+{% endblock %}

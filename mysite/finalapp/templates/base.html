@@ -1,0 +1,58 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif|Lora' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+    <title>{{ title | default:"Final Project" }}</title>
+
+    {% block header_ex %}
+    {% endblock %}
+
+</head>
+<body>
+
+
+<nav class="navbar navbar-inverse" id="navbar">
+  <div class="col-md-10 col-md-offset-1">
+    <ul class="nav navbar-nav">
+      <li><a href="http://127.0.0.1:8000/finalapp/display_index/">Home</a></li>
+      <li><a href="http://127.0.0.1:8000/finalapp/display_pic/">Causes of Death</a></li>
+      <li><a href="http://127.0.0.1:8000/finalapp/display_map2/">Infant Mortality</a></li>
+      <li><a href="http://127.0.0.1:8000/finalapp/form/">Neighborhood Data</a></li>
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Group<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#jq">Lauren Speigel</a></li>
+          <li><a href="#jo">Leonor Ortiz</a></li>
+        </ul>
+      </li>
+    </ul>
+
+
+  </div>
+</nav>
+
+<div class="col-md-10 col-md-offset-1 text-left">
+
+<br>
+<br>
+
+  <h1> {{ title | default:"Final Project" }}</h1>
+
+  <div id="content">
+
+
+    {% block content %}{% endblock %}
+  </div>
+
+</div>
+
+</body>
+</html>

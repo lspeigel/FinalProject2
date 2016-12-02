@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+<!-- template for home page -->
+
+<style>
+
+p{
+  padding: 50px;
+
+}
+
+</style>
+
+{% block content %}
+<br>
+
+<p style="font-family:Droid+Serif">
+
+Research <a href=http://www.cdc.gov/minorityhealth/chdir/2011/factsheet.pdf>shows</a> that poverty is correlated with disparate health outcomes.
+This webapp examines some of the health issues that Chicagoans face, which are largely correlated with access to quality housing and income.
+While there are many ways this can be measured, we are primarily concerned with infant mortality rates and overall causes of death, as these are generally associated with income levels, through access to healthcare, and environmental factors.</p>
+<p style="font-family:Droid+Serif";>
+Chicago is segregated along socio-economic lines so we use community areas, which generally align with neighborhoods, to look at the concentration of affordable housing and various health indicators. </p>
+<br>
+<br>
+<img src='{{ pic_source }}' width=45% />
+
+<img src='{{ pic_source2 }}' width=45% align="right"/>
+{% endblock %}

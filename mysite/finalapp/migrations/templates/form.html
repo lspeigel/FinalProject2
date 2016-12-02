@@ -1,0 +1,21 @@
+{% block content %}
+
+{% if variable %}
+    I smell you, {{ variable }}!! </br>
+    You are at {{ location }} -- what a swell spot.
+{% endif %}
+
+
+<form action="{{ form_action }}"
+      method="{{ form_method }}">
+  {% if form_method == "post" %}
+    {% csrf_token %}
+  {% endif %}
+
+  {{ form.address }} </[>
+  {{ form.state }}
+  <input type="submit" value="Submit">
+</form>
+
+
+{% endblock %}

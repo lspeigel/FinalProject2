@@ -1,0 +1,122 @@
+* {
+  font-family: "Helvetica", Arial, sans-serif;
+}
+
+body {
+  background-color: gainsboro;
+
+}
+
+img {
+  border-style: solid;
+  border-color: seashell;
+  border-width: 5px;
+  float: center;
+  margin: 5px 20px;
+}
+
+.navbar {
+  background-color: seashell;
+  border-radius: 0px;
+  border-color: #ffe6d5;
+  border-width: 0px;
+}
+
+.navbar-inverse {
+  padding: 0px;
+  min-height: 0px !important;
+  height: 40px;
+  font-size: 13pt;
+  color: #ffe6d5;
+}
+
+.navbar .navbar-nav .active>a,
+.navbar .navbar-nav .active>a:focus,
+.navbar .navbar-nav .active>a:hover {
+  background-color: #eef0ff;
+  border: none;
+}
+
+.navbar-nav > li > a {
+  padding-top: 7px !important;
+  padding-bottom:0 !important;
+  height: 38px;
+  color: #ffe6d5;
+  display: inline-block;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #ffe6d5;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  background-color: #eef0ff;
+}
+
+.navbar-brand {
+    padding-top: 4px !important;
+    padding-bottom :0 !important;
+    padding-left: 0 !important;
+    height: 30px;
+}
+
+.navbar-toggle {
+    margin: 3px 0px;
+    background-color: transparent;
+    background-image: none;
+    border-color: #eef0ff;
+    border-width: 1px;
+    border-radius: 6px;
+}
+
+.dropdown-toggle:active,
+.open .dropdown-toggle {
+  background:#2f4f4f !important;
+  color: #eef0ff !important;
+}
+
+.navbar-nav > .dropdown a{
+  padding: 0px 15px;
+}
+
+.dropdown-menu {
+  background-color: ##2f4f4f;
+  padding: 0px 0px;
+}
+
+.dropdown > .dropdown-menu > li a {
+  background-color: #ffe6d5;
+  color: #2f4f4f;
+  padding: 6px 16px;
+}
+
+
+.form-nav-control {
+  width : auto;
+  height : 38px;
+  margin: 0px 0px;
+  padding: 0px 20px;
+  display: inline-block;
+  border-width: 2px;
+  border-radius: 0px;
+  background-color: seashell;
+  border-color: #ffe6d5;
+  color: dimgrey;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  float: left;;
+}
+
+
+table {
+  float: auto;
+}
+
+h1 {
+  color: dimgrey;
+  font-family: 'Lora';
+  font-size: 22px;
+  margin-top:14px;
+  margin-bottom:10px;
+  font-family: verdana;
+}

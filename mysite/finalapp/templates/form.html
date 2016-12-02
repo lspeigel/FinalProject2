@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+<!-- template for data table -->
+
+{% block content %}
+<b>
+
+<form action="{{ form_action }}"
+      method="{{ form_method }}">
+  {% if form_method == "post" %}
+    {% csrf_token %}
+  {% endif %}
+<b>
+  <b>
+  {{ form.area }} </[>
+
+  <input type="submit" value="Submit">
+</form>
+<b>
+  <b>
+{{html_table | safe}}
+
+{% endblock %}
