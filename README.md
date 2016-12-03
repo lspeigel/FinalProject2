@@ -1,18 +1,22 @@
-# FinalProject
-
-###
 
 1. Questions:
 
+  We were interested in looking at how health outcomes for Chicagoans are affected by poverty. In general, research shows that income has a direct impact on various health outcomes, as it is directly related to access to health care (preventive care, early detection of disease, overall health management) and infant mortality. Since Chicagoans a lot of areas of segregated, concentrated poverty, we wanted to see whether health outcomes matched those income distributions. For the most part, you can see in looking at maps that health outcomes are disparate based on income. While most of the top causes of death exist everywhere in the city, the magnitude of the mortality rates are drastically different. The plots show the correlation between income and mortality rates--for the most part, low income is associated with higher mortality rates for a given cause of death in a neighborhood.
+
+  We used community areas, of which there are 77, to mirror neighborhoods since these are more meaningful at the city-level than are census tracts, which are too granular for the purpose of this analysis.
+
   Maps:
   a. Per capita income by neighborhood
-  b. Prevalence of cause of death by neighborhood--what is the concentration of fatal causes in each area?
-  c. Affordable housing concentration map
+  b. Affordable housing concentration map
+  c. Prevalence of cause of death by neighborhood--what is the concentration of fatal causes in each area?
   d. Infant mortality rates by neighborhood
 
 
   Cause of death table:
   10 causes are documented by the city: assault(homicide), breast cancer in women, cancer, colorectal cancer, diabetes, firearm-related, infant mortality rate, lung cancer, prostate cancer in men, stroke. Infant mortality rate is considered separately from the other nine causes.
+
+  Plots:
+  We did not repeat the maps section of doing a plot for every cause of death because we wanted to focus on more prominent causes of death that have more meaning to a lay audience, such as assault, firearm-related deaths, cancer, and infant mortality. 
 
 2. Datasources:
     Affordable housing sites: https://data.cityofchicago.org/Community-Economic-Development/Affordable-Rental-Housing-Developments/s6ha-ppgi
@@ -57,4 +61,4 @@
 
 5. Challenges
 
-We created a SQL database and were able to successfully make a table that we wanted to display on the website, but we were not able to get the code to work in Django. 
+We created a SQL database and were able to successfully make a table that we wanted to display on the website, but we were not able to get the code to work in Django.
