@@ -52,13 +52,18 @@
 
 4. Site layout
 
-  We created a webapp that runs on Django.It is called finalapp, stored in the mysite folder.
+  We created a webapp that runs on Django. It is called finalapp, stored in the mysite folder.
 
-  To access it, go to the link http://127.0.0.1:8000/finalapp/display_index/ after running the server.
+  To access it:
+  -go to the finalapp2 directory
+  -go to the mysite directory
+  -do python manage.py runserver
+  -go to the link: http://127.0.0.1:8000/finalapp/display_index/
+
   On the site you can go the 5 different sections using the navigation bar.
   All the data that we use in the views is stored under the static folder.
 
-There is view for each map and each plot. We created the maps and plots with csv files using pandas then saved them as images.
+There is view for each map and each plot. We created the maps and plots with .csv files using pandas then saved them as images.
 
 We created a form to display the mortality causes by neighborhood. To do that, we created a table using a csv file and only included the columns with mortality data. We also created a dropdown menu to filter out the table by neighborhoods. This is all included under a single view.
 
@@ -69,7 +74,7 @@ We then created a different view for each section or page of our webapp:
 -	The “Plots” section displays 6 images in an individual template.
 -	the "Neighborhood" section displays the form view in an individual table
 
-We coded templates for all the different sections and used Django girls for the design.
+We coded templates for all the different sections and used Django girls and added html code for the design.
 
 
 
@@ -77,4 +82,4 @@ We coded templates for all the different sections and used Django girls for the 
 
 We created a SQL database and were able to successfully make a table that we wanted to display on the website, but we were not able to get the code to work in Django.
 
-We were able to install the database in the django app and attempted to create models to do the tables but were unable. Something wen't wrong when doing the migrate command on terminal and we never accessed the database. 
+We were able to install the database in settings.py and to created several models to be able to access the database in the terminal. We tried different ways to do the models and different commands on the terminal to have access to the database but it did not work. We were never able to create tables. Something went wrong when doing the migrate command on terminal and we never accessed the database.
