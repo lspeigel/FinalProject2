@@ -14,12 +14,6 @@
   Cause of death table:
   10 causes are documented by the city: assault(homicide), breast cancer in women, cancer, colorectal cancer, diabetes, firearm-related, infant mortality rate, lung cancer, prostate cancer in men, stroke. Infant mortality rate is considered separately from the other nine causes.
 
-
-  Average infant mortality rate for the city: sqlite> select avg(Infant_Mortality_Rate) from health;
-
-
-
-
 2. Datasources:
     Affordable housing sites: https://data.cityofchicago.org/Community-Economic-Development/Affordable-Rental-Housing-Developments/s6ha-ppgi
 
@@ -53,3 +47,9 @@
 
 
 4. Site layout
+
+  We created a webapp that runs on Django.It is called finalapp, stored in the mysite folder.
+
+  To access it, go to the link http://127.0.0.1:8000/finalapp/display_index/ after running the server.
+  On the site you can go the 5 different sections using the navigation bar.
+  All the data that we use in the views is stored under the static folder.

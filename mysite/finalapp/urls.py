@@ -21,6 +21,12 @@ urlpatterns = [
     url(r'^map10/$', views.embedded, name = "map10"),#housing map
     url(r'^map11/$', views.embedded2, name = "map11"),#infant mortality map
     url(r'^display_map2/$', views.display_map2, name="maps2"), #infant mortality page
-
+    url(r'^plot1/$', views.plot_assault, name = "plot1"), #assault plot_assault
+    url(r'^plot2/$', views.plot_breast_cancer, name = "plot2"),#breast cancer plot
+    url(r'^plot3/$', views.plot_diabetes, name = "plot3"),#diabetes plot
+    url(r'^plot4/$', views.plot_firearm, name = "plot4"),#firearm plot
+    url(r'^plot5/$', views.plot_infant, name = "plot5"),#infant mortality plot
+    url(r'^plot6/$', views.plot_cancer, name = "plot6"),#cancer plot
+    url(r'^display_plot/$', views.display_plot, name="plots"), #plots page
 
     ]

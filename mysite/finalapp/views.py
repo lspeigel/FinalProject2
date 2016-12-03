@@ -415,3 +415,167 @@ def form(request):
               'html_table' : table}
 
     return render(request, 'form.html', params)
+
+#assault mortality and income by Neighborhood
+def plot_assault(request):
+    file_name = join(settings.STATIC_ROOT,'myapp/Health.csv')
+    assault_df = pd.read_csv(file_name, usecols = ["Area_Number", "Area_Name", "Assault"])
+    assault_df.index = assault_df.index + 1
+    assault_df.dropna(inplace = True)
+
+    file_name = join(settings.STATIC_ROOT, 'myapp/Census.csv')
+    poverty_df = pd.read_csv(file_name)
+    poverty_df.index = poverty_df.index + 1
+    poverty_df["INCOME"] = poverty_df["INCOME"].astype(int)
+
+
+    new_df = pd.merge(assault_df, poverty_df, how = "inner", left_on = "Area_Number", right_index = True)
+    ax = new_df.plot(kind = 'scatter', x = "Assault", y = "INCOME")
+    ax.set(title = "Income and Assault Death Rate" , xlabel = "Assault Mortality Rate per 100,000 Residents", ylabel = "Neighborhood Per Capita Income ($)")
+    figfile = ax.get_figure()
+    figfile = BytesIO()
+    try: ax.figure.savefig(figfile, format = 'png')
+    except ValueError: raise Http404("No such color")
+    figfile.seek(0)
+
+    return HttpResponse(figfile.read(), content_type="image/png")
+
+#breast cancer mortality and income by Neighborhood
+def plot_breast_cancer(request):
+
+    file_name = join(settings.STATIC_ROOT,'myapp/Health.csv')
+    breast_cancer_df = pd.read_csv(file_name, usecols = ["Area_Number", "Area_Name", "Breast_Cancer"])
+    breast_cancer_df.index = breast_cancer_df.index + 1
+    breast_cancer_df.dropna(inplace = True)
+    breast_cancer_df["Area_Name"] = breast_cancer_df["Area_Name"]
+
+    file_name = join(settings.STATIC_ROOT, 'myapp/Census.csv')
+    poverty_df = pd.read_csv(file_name)
+    poverty_df.index = poverty_df.index + 1
+    poverty_df["INCOME"] = poverty_df["INCOME"].astype(int)
+
+
+    new_df = pd.merge(breast_cancer_df, poverty_df, how = "inner", left_on = "Area_Number", right_index = True)
+    ax = new_df.plot(kind = 'scatter', x = "Breast_Cancer", y = "INCOME")
+    ax.set(title = "Income and Breast Cancer Death Rate" , xlabel = "Breast Cancer Mortality Rate per 100,000 Female Residents", ylabel = "Neighborhood Per Capita Income ($)")
+    figfile = ax.get_figure()
+    figfile = BytesIO()
+    try: ax.figure.savefig(figfile, format = 'png')
+    except ValueError: raise Http404("No such color")
+    figfile.seek(0)
+
+    return HttpResponse(figfile.read(), content_type="image/png")
+
+#diabetes mortality and income by Neighborhood
+def plot_diabetes(request):
+
+    file_name = join(settings.STATIC_ROOT,'myapp/Health.csv')
+    diabetes_df = pd.read_csv(file_name, usecols = ["Area_Number", "Area_Name", "Diabetes"])
+    diabetes_df.index = diabetes_df.index + 1
+    diabetes_df.dropna(inplace = True)
+    diabetes_df["Area_Name"] = diabetes_df["Area_Name"]
+
+    file_name = join(settings.STATIC_ROOT, 'myapp/Census.csv')
+    poverty_df = pd.read_csv(file_name)
+    poverty_df.index = poverty_df.index + 1
+    poverty_df["INCOME"] = poverty_df["INCOME"].astype(int)
+
+    new_df = pd.merge(diabetes_df, poverty_df, how = "inner", left_on = "Area_Number", right_index = True)
+    ax = new_df.plot(kind = 'scatter', x = "Diabetes", y = "INCOME")
+    ax.set(title = "Income and Diabetes Death Rate" , xlabel = "Diabetes Mortality Rate per 100,000 Residents", ylabel = "Neighborhood Per Capita Income ($)")
+    figfile = ax.get_figure()
+    figfile = BytesIO()
+    try: ax.figure.savefig(figfile, format = 'png')
+    except ValueError: raise Http404("No such color")
+    figfile.seek(0)
+
+    return HttpResponse(figfile.read(), content_type="image/png")
+
+#firearm mortality and income by Neighborhood
+def plot_firearm(request):
+
+    file_name = join(settings.STATIC_ROOT,'myapp/Health.csv')
+    firearm_df = pd.read_csv(file_name, usecols = ["Area_Number", "Area_Name", "Firearm"])
+    firearm_df.index = firearm_df.index + 1
+    firearm_df.dropna(inplace = True)
+    firearm_df["Area_Name"] = firearm_df["Area_Name"]
+
+    file_name = join(settings.STATIC_ROOT, 'myapp/Census.csv')
+    poverty_df = pd.read_csv(file_name)
+    poverty_df.index = poverty_df.index + 1
+    poverty_df["INCOME"] = poverty_df["INCOME"].astype(int)
+
+    new_df = pd.merge(firearm_df, poverty_df, how = "inner", left_on = "Area_Number", right_index = True)
+    ax = new_df.plot(kind = 'scatter', x = "Firearm", y = "INCOME")
+    ax.set(title = "Income and Firearm Death Rate" , xlabel = "Firearm Mortality Rate per 100,000 Residents", ylabel = "Neighborhood Per Capita Income ($)")
+    figfile = ax.get_figure()
+    figfile = BytesIO()
+    try: ax.figure.savefig(figfile, format = 'png')
+    except ValueError: raise Http404("No such color")
+    figfile.seek(0)
+
+    return HttpResponse(figfile.read(), content_type="image/png")
+
+#infant mortality and income by Neighborhood
+def plot_infant(request):
+
+    file_name = join(settings.STATIC_ROOT,'myapp/Health.csv')
+    infant_df = pd.read_csv(file_name, usecols = ["Area_Number", "Area_Name", "Infant_Mortality_Rate"])
+    infant_df.index = infant_df.index + 1
+    infant_df.dropna(inplace = True)
+    infant_df["Area_Name"] = infant_df["Area_Name"]
+
+    file_name = join(settings.STATIC_ROOT, 'myapp/Census.csv')
+    poverty_df = pd.read_csv(file_name)
+    poverty_df.index = poverty_df.index + 1
+    poverty_df["INCOME"] = poverty_df["INCOME"].astype(int)
+
+    new_df = pd.merge(infant_df, poverty_df, how = "inner", left_on = "Area_Number", right_index = True)
+    ax = new_df.plot(kind = 'scatter', x = "Infant_Mortality_Rate", y = "INCOME")
+    ax.set(title = "Income and Infant Mortality Rate" , xlabel = "Infant Mortality Rate per 1,000 Live Births", ylabel = "Neighborhood Per Capita Income ($)")
+    figfile = ax.get_figure()
+    figfile = BytesIO()
+    try: ax.figure.savefig(figfile, format = 'png')
+    except ValueError: raise Http404("No such color")
+    figfile.seek(0)
+
+    return HttpResponse(figfile.read(), content_type="image/png")
+
+#cancer mortality and income by Neighborhood
+def plot_cancer(request):
+
+    file_name = join(settings.STATIC_ROOT,'myapp/Health.csv')
+    cancer_df = pd.read_csv(file_name, usecols = ["Area_Number", "Area_Name", "Cancer"])
+    cancer_df.index = cancer_df.index + 1
+    cancer_df.dropna(inplace = True)
+    cancer_df["Area_Name"] = cancer_df["Area_Name"]
+
+    file_name = join(settings.STATIC_ROOT, 'myapp/Census.csv')
+    poverty_df = pd.read_csv(file_name)
+    poverty_df.index = poverty_df.index + 1
+    poverty_df["INCOME"] = poverty_df["INCOME"].astype(int)
+
+    new_df = pd.merge(cancer_df, poverty_df, how = "inner", left_on = "Area_Number", right_index = True)
+    ax = new_df.plot(kind = 'scatter', x = "Cancer", y = "INCOME")
+    ax.set(title = "Income and Cancer Death Rate" , xlabel = "Cancer Mortality Rate per 100,000 Residents ", ylabel = "Neighborhood Per Capita Income ($)")
+    figfile = ax.get_figure()
+    figfile = BytesIO()
+    try: ax.figure.savefig(figfile, format = 'png')
+    except ValueError: raise Http404("No such color")
+    figfile.seek(0)
+
+    return HttpResponse(figfile.read(), content_type="image/png")
+
+
+#display all the plots
+def display_plot(request):
+
+    params = {'title' : "Plots",
+              'pic_source' : reverse_lazy("finalapp:plot1"),
+              'pic_source2' : reverse_lazy("finalapp:plot2"),
+              'pic_source3' : reverse_lazy("finalapp:plot3"),
+              'pic_source4' : reverse_lazy("finalapp:plot4"),
+              'pic_source5' : reverse_lazy("finalapp:plot5"),
+              'pic_source6' : reverse_lazy("finalapp:plot6"),}
+
+    return render(request, 'view_plot.html', params)
