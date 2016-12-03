@@ -16,7 +16,7 @@
   10 causes are documented by the city: assault(homicide), breast cancer in women, cancer, colorectal cancer, diabetes, firearm-related, infant mortality rate, lung cancer, prostate cancer in men, stroke. Infant mortality rate is considered separately from the other nine causes.
 
   Plots:
-  We did not repeat the maps section of doing a plot for every cause of death because we wanted to focus on more prominent causes of death that have more meaning to a lay audience, such as assault, firearm-related deaths, cancer, and infant mortality. 
+  We did not repeat the maps section of doing a plot for every cause of death because we wanted to focus on more prominent causes of death that have more meaning to a lay audience, such as assault, firearm-related deaths, cancer, and infant mortality.
 
 2. Datasources:
     Affordable housing sites: https://data.cityofchicago.org/Community-Economic-Development/Affordable-Rental-Housing-Developments/s6ha-ppgi
@@ -58,7 +58,23 @@
   On the site you can go the 5 different sections using the navigation bar.
   All the data that we use in the views is stored under the static folder.
 
+There is view for each map and each plot. We created the maps and plots with csv files using pandas then saved them as images.
+
+We created a form to display the mortality causes by neighborhood. To do that, we created a table using a csv file and only included the columns with mortality data. We also created a dropdown menu to filter out the table by neighborhoods. This is all included under a single view.
+
+We then created a different view for each section or page of our webapp:
+-	The “Home” section displays two images and text in a individual template
+-	The “Causes of death” section displays 9 different images in an individual template.
+-	The “Infant mortality” section display a single image in an individual template.
+-	The “Plots” section displays 6 images in an individual template.
+-	the "Neighborhood" section displays the form view in an individual table
+
+We coded templates for all the different sections and used Django girls for the design.
+
+
 
 5. Challenges
 
 We created a SQL database and were able to successfully make a table that we wanted to display on the website, but we were not able to get the code to work in Django.
+
+We were able to install the database in the django app and attempted to create models to do the tables but were unable. Something wen't wrong when doing the migrate command on terminal and we never accessed the database. 
