@@ -53,3 +53,8 @@
   To access it, go to the link http://127.0.0.1:8000/finalapp/display_index/ after running the server.
   On the site you can go the 5 different sections using the navigation bar.
   All the data that we use in the views is stored under the static folder.
+
+
+5. Challenges
+
+We created a SQL database and were able to successfully make a table that we wanted to display on the website, but we were not able to get the code to work in Django. 
